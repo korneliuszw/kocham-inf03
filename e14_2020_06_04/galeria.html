@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sklep</title>
+    <link rel="stylesheet" href="./styl.css">
+</head>
+<body>
+    <header>
+        <h1>Ozdoby - sklep</h1>
+    </header>
+    <div class="flex">
+        <aside class="left">
+            <h2>OZDOBY</h2>
+            <a href="./galeria.html">Galeria</a>
+            <a href="./zamowienie.php">Zamówienie</a>
+        </aside>
+        <main class="middel">
+            <div>
+            <img onmouseover="zmienTekst(0)" src="./choinka.jpg" alt="ozdoby choinkowe">
+            <img onmouseover="zmienTekst(1)" src="./mikolaj.jpg" alt="ozdoby choinkowe">
+            <img onmouseover="zmienTekst(2)" src="./renifer.jpg" alt="ozdoby choinkowe">
+            </div>
+            <p>Wybierz ozdobe w kółku</p>
+            <p style="display: none;" id="selected"></p>
+        </main>
+        <section class="right">
+            <img src="./animacja.gif">
+        </section>
+    </div>
+    <footer>
+        <h3>Autor strony: XXXXXXXXXX</h3>
+    </footer>
+    <script>
+        function zmienTekst(wybrano) {
+            let tekst = ""
+            if (wybrano === 0)
+                tekst = "Wybrałeś choinkę. Cena 10 zł"
+            else if (wybrano == 1)
+                tekst = "Wybrałeś mikołaja. Cena 12 zł"
+            else if (wybrano == 2)
+                tekst = "Wybrałeś renifera. Cena 8 zł"
+            const p = document.getElementById('selected')
+            p.style.display = 'block'
+            // p.innerText = tekst
+        }
+    </script>
+</body>
+</html>
